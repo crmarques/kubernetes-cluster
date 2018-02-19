@@ -1,12 +1,10 @@
 #! /bin/bash
 
-sudo su -
-
 cat <<EOF > /etc/etcd/etcd.conf
 ETCD_NAME=default
 ETCD_DATA_DIR="/var/lib/etcd/default.etcd"
-ETCD_LISTEN_CLIENT=URLS="http://0.0.0.0:2379"
-ETCD_ADVERTISE_CLIENT=URLS="http://0.0.0.0:2379"
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"
 EOF
 
 cat <<EOF > /etc/kubernetes/apiserver

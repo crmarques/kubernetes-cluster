@@ -1,7 +1,5 @@
 #! /bin/bash
 
-sudo su -
-
 HOSTNAME=$(hostname)
 
 cat <<EOF > /etc/kubernetes/kubelet
@@ -20,4 +18,4 @@ done
 
 kubectl config set-cluster default-cluster --server=http://k8s-master:8080
 kubectl config set-context default-context --cluster=default-cluster --user=default-admin
-kubectl config use-context default-context 
+kubectl config use-context default-context
